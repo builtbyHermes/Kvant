@@ -1,0 +1,172 @@
+.navbar {
+  position: absolute;
+
+  width: 1292px;
+  height: 80px;
+
+  left: 50%;
+  top: 0;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0;
+
+  z-index: 2;
+}
+
+/* ================================
+   BRAND
+================================ */
+
+.brandLogo {
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+
+  width: 64px;
+  height: 30px;
+
+  padding: 0;
+
+  font-family: "Manrope", sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 30px;
+
+  color: #f1f0fa;
+
+  text-decoration: none;
+}
+
+.brandLogo:hover {
+  color: #f1f0fa;
+}
+
+/* ================================
+   NAVIGATION LINKS
+================================ */
+
+.navLinks {
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+
+  padding: 0;
+
+  gap: 32px;
+
+  width: 321px;
+  height: 20px;
+}
+
+.navLinks a {
+  font-family: "Geist", sans-serif;
+  font-style: normal;
+
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+
+  color: #989898;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  transition: color 0.2s ease;
+}
+
+.navLinks a:hover {
+  color: #f1f0fa;
+}
+
+/* ================================
+   LOGIN BUTTON
+================================ */
+
+.loginButton {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: center;
+  align-items: center;
+
+  padding: 14px 24px;
+
+  gap: 8px;
+
+  width: 137px;
+  height: 48px;
+
+  background: #ffffff;
+
+  border: none;
+  border-radius: 12px;
+
+  font-family: "Manrope", sans-serif;
+  font-style: normal;
+
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 20px;
+
+  color: #000000;
+
+  cursor: pointer;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.loginButton:hover {
+  transform: translateY(-1px);
+  background: #f1f1f1;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 1394px) {
+  .navbar {
+    width: calc(100% - 64px);
+  }
+}
+
+@media (max-width: 900px) {
+  .navLinks {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 700px) {
+  .navbar {
+    width: calc(100% - 40px);
+  }
+
+  .navLinks {
+    display: none;
+  }
+
+  .loginButton {
+    width: 110px;
+  }
+}
+
+@media (max-width: 480px) {
+  .brandLogo {
+    font-size: 20px;
+  }
+}

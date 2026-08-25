@@ -1,0 +1,626 @@
+.homePage {
+  position: relative;
+
+  width: 100%;
+  min-height: 952px;
+
+  background: #000000;
+
+  overflow: hidden;
+
+  color: #f1f0fa;
+}
+
+/* ========================================
+   HERO IMAGE
+======================================== */
+
+.heroImage {
+  position: absolute;
+
+  width: 1394px;
+  height: 934px;
+
+  left: 50%;
+  top: 9px;
+
+  transform: translateX(-50%);
+
+  background-image: url("/images/hero/herobg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  border-radius: 0 0 40px 40px;
+
+  z-index: 0;
+}
+
+/* ========================================
+   CURSOR POLLEN / PLASMA PARTICLES
+======================================== */
+
+.particleField {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  display: block;
+
+  border-radius: 50%;
+
+  background: rgba(241, 240, 250, 0.9);
+
+  box-shadow:
+    0 0 4px rgba(241, 240, 250, 0.45),
+    0 0 8px rgba(241, 240, 250, 0.12);
+
+  pointer-events: none;
+
+  will-change: transform, opacity;
+
+  opacity: 0;
+
+  transform: translate3d(0, 0, 0);
+}
+
+/* ========================================
+   HERO MAIN HEADER
+======================================== */
+
+.heroMainHeader {
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  padding: 0;
+
+  gap: 24px;
+
+  width: 800px;
+  height: 281px;
+
+  left: 50%;
+  top: 220px;
+
+  transform: translateX(-50%);
+
+  z-index: 2;
+}
+
+/* Badge */
+
+.badge {
+  display: flex;
+  flex-direction: row;
+
+  align-items: flex-start;
+
+  padding: 6px 12px;
+
+  width: 234px;
+  height: 25px;
+
+  border-radius: 99px;
+
+  font-family: "Spline Sans", sans-serif;
+  font-style: normal;
+
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 13px;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+
+  color: #b4b4b4;
+
+  white-space: nowrap;
+}
+
+/* Hero Heading */
+
+.heroMainHeader h1 {
+  width: 800px;
+  height: 136px;
+
+  margin: 0;
+
+  align-self: stretch;
+
+  font-family: "Manrope", sans-serif;
+  font-style: normal;
+
+  font-weight: 800;
+  font-size: 56px;
+  line-height: 68px;
+
+  text-align: center;
+
+  letter-spacing: -0.02em;
+
+  background: linear-gradient(
+    181.71deg,
+    #f1f0fa -25.22%,
+    #4c4c4c 185.1%
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+
+  color: transparent;
+}
+
+/* Hero Description */
+
+.heroMainHeader p {
+  width: 600px;
+  height: 72px;
+
+  margin: 0;
+
+  font-family: "Geist", sans-serif;
+  font-style: normal;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+
+  text-align: center;
+
+  color: #9b99c2;
+}
+
+/* ========================================
+   HERO CTAs
+======================================== */
+
+.heroCtas {
+  position: absolute;
+
+  display: flex;
+  flex-direction: row;
+
+  align-items: flex-start;
+
+  padding: 0;
+
+  gap: 36px;
+
+  width: 366px;
+  height: 48px;
+
+  left: 50%;
+  top: 614px;
+
+  transform: translateX(-50%);
+
+  z-index: 2;
+}
+
+/* Primary Button */
+
+.primaryButton {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: center;
+  align-items: center;
+
+  padding: 14px 24px;
+
+  gap: 8px;
+
+  width: 190px;
+  height: 48px;
+
+  background: #e9e9e9;
+
+  border: none;
+  border-radius: 12px;
+
+  font-family: "Manrope", sans-serif;
+
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 20px;
+
+  color: #2c2c2c;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.primaryButton:hover {
+  transform: translateY(-1px);
+  background: #ffffff;
+}
+
+.primaryButton svg {
+  width: 16px;
+  height: 16px;
+
+  flex-shrink: 0;
+}
+
+/* Secondary Button */
+
+.secondaryButton {
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: row;
+
+  justify-content: center;
+  align-items: center;
+
+  padding: 14px 24px;
+
+  gap: 8px;
+
+  width: 140px;
+  height: 48px;
+
+  background: transparent;
+
+  border: 0.1px solid #e4e4e4;
+  border-radius: 12px;
+
+  font-family: "Manrope", sans-serif;
+
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 20px;
+
+  color: #f1f0fa;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.secondaryButton:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* ========================================
+   LOGOS STRIP
+======================================== */
+
+.logosStrip {
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 48px 0;
+
+  gap: 40px;
+
+  width: 1440px;
+  height: 178px;
+
+  left: 50%;
+  top: 765px;
+
+  transform: translateX(-50%);
+
+  z-index: 2;
+}
+
+/* Trusted Title */
+
+.trustedTitle {
+  width: 300px;
+  height: 17px;
+
+  margin: 0;
+
+  font-family: "Geist", sans-serif;
+
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 17px;
+
+  letter-spacing: 1px;
+
+  text-align: center;
+
+  text-transform: uppercase;
+
+  color: #cfcfcf;
+}
+
+/* Logos Marquee */
+
+.logosRow {
+  position: relative;
+
+  width: 1200px;
+  height: 25px;
+
+  overflow: hidden;
+}
+
+.logosTrack {
+  display: flex;
+
+  align-items: center;
+
+  width: max-content;
+  height: 25px;
+
+  animation: logosMarquee 22s linear infinite;
+
+  will-change: transform;
+}
+
+.logoGroup {
+  display: flex;
+
+  align-items: center;
+
+  gap: 110px;
+
+  flex-shrink: 0;
+
+  width: max-content;
+  height: 25px;
+
+  padding-right: 110px;
+}
+
+.logo {
+  flex-shrink: 0;
+
+  height: 25px;
+
+  font-family: "Manrope", sans-serif;
+
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+
+  color: #f1f0fa;
+
+  opacity: 0.65;
+
+  white-space: nowrap;
+}
+
+@keyframes logosMarquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 1394px) {
+  .heroImage {
+    width: calc(100% - 24px);
+  }
+
+  .logosStrip {
+    width: 100%;
+  }
+
+  .logosRow {
+    width: calc(100% - 64px);
+  }
+}
+
+@media (max-width: 900px) {
+  .heroMainHeader {
+    width: calc(100% - 48px);
+  }
+
+  .heroMainHeader h1 {
+    width: 100%;
+    height: auto;
+
+    font-size: 48px;
+    line-height: 58px;
+  }
+
+  .heroMainHeader p {
+    width: min(600px, 100%);
+    height: auto;
+  }
+
+  .logosRow {
+    width: calc(100% - 48px);
+  }
+}
+
+@media (max-width: 700px) {
+  .homePage {
+    min-height: 900px;
+  }
+
+  .heroImage {
+    height: 880px;
+
+    border-radius: 0 0 32px 32px;
+  }
+
+  .heroMainHeader {
+    top: 170px;
+
+    width: calc(100% - 40px);
+
+    gap: 20px;
+  }
+
+  .heroMainHeader h1 {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .heroMainHeader p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .heroCtas {
+    top: 570px;
+
+    width: auto;
+
+    gap: 12px;
+  }
+
+  .primaryButton {
+    width: 180px;
+  }
+
+  .secondaryButton {
+    width: 140px;
+  }
+
+  .logosStrip {
+    top: 700px;
+
+    height: auto;
+
+    padding: 40px 20px;
+
+    gap: 28px;
+  }
+
+  .logosRow {
+    width: 100%;
+    height: 25px;
+
+    padding: 0;
+  }
+
+  .logoGroup {
+    gap: 70px;
+
+    padding-right: 70px;
+  }
+
+  .logosTrack {
+    animation-duration: 20s;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroImage {
+    width: 100%;
+
+    border-radius: 0 0 24px 24px;
+  }
+
+  .heroMainHeader {
+    top: 145px;
+  }
+
+  .badge {
+    width: auto;
+
+    font-size: 10px;
+  }
+
+  .heroMainHeader h1 {
+    font-size: 34px;
+    line-height: 42px;
+  }
+
+  .heroMainHeader p {
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  .heroCtas {
+    top: 570px;
+
+    width: calc(100% - 40px);
+
+    justify-content: center;
+
+    gap: 10px;
+  }
+
+  .primaryButton {
+    width: 180px;
+
+    padding: 14px 16px;
+  }
+
+  .secondaryButton {
+    width: 130px;
+
+    padding: 14px 16px;
+  }
+
+  .logosStrip {
+    top: 700px;
+  }
+
+  .trustedTitle {
+    width: auto;
+
+    font-size: 11px;
+  }
+
+  .logosRow {
+    width: 100%;
+  }
+
+  .logoGroup {
+    gap: 50px;
+
+    padding-right: 50px;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+
+  .logosTrack {
+    animation-duration: 18s;
+  }
+}
