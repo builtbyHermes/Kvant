@@ -24,6 +24,7 @@ type Particle = {
 };
 
 export default function Hero() {
+
   const homePageRef = useRef<HTMLElement | null>(null);
   const particleFieldRef = useRef<HTMLDivElement | null>(null);
   const particlesRef = useRef<Particle[]>([]);
@@ -167,8 +168,6 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      {/* Navbar Component */}
-     
 
       {/* Hero Main Header */}
       <div className={styles.heroMainHeader}>
@@ -210,30 +209,7 @@ export default function Hero() {
         </button>
       </div>
 
-      {/* Logos Strip */}
-      <section className={styles.logosStrip}>
-        <p className={styles.trustedTitle}>TRUSTED BY LEADING TEAMS WORLDWIDE</p>
-
-        <div className={styles.logosRow}>
-          <div className={styles.logosTrack}>
-            <div className={styles.logoGroup}>
-              {brands.map((brand) => (
-                <div className={styles.logo} key={brand}>
-                  {brand}
-                </div>
-              ))}
-            </div>
-
-            <div className={styles.logoGroup} aria-hidden="true">
-              {brands.map((brand) => (
-                <div className={styles.logo} key={`duplicate-${brand}`}>
-                  {brand}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      
     </section>
   );
 }

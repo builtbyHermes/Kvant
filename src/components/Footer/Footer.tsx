@@ -1,42 +1,70 @@
+import Link from "next/link";
+import styles from "./Footer.module.css";
+
 export default function Footer() {
+  
   return (
-    <footer className="site-footer">
-      <div className="footer-cta">
+    <footer className={styles.footer}>
+      {/* CTA */}
+      <div className={styles.footerCta}>
         <h3>Step up to a modern operational cockpit</h3>
-        <p>Join thousands of technical business leads standardizing their reports.</p>
-        <div className="cta-row">
-          <button type="button" className="primary-btn">Book a Call</button>
-          <button type="button" className="secondary-btn dark">Get Started Free</button>
+
+        <p>
+          Join thousands of technical business leads standardizing their
+          reports.
+        </p>
+
+        <div className={styles.ctaRow}>
+          <button type="button" className={styles.primaryButton}>
+            Book a Call
+          </button>
+
+          <button type="button" className={styles.secondaryButton}>
+            Get Started Free
+          </button>
         </div>
       </div>
 
-      <div className="footer-meta">
-        <div>
-          <div className="brand">Kvant</div>
-          <p>The modern analytical dashboard system engineered for lightning-fast retail operations.</p>
+      {/* Footer information */}
+      <div className={styles.footerMeta}>
+        <div className={styles.footerBrand}>
+          <div className={styles.brand}>Kvant</div>
+
+          <p>
+            The modern analytical dashboard system engineered for
+            lightning-fast retail operations.
+          </p>
         </div>
 
-        <div className="footer-links">
-          <div>
+        <div className={styles.footerLinks}>
+          {/* Product */}
+          <div className={styles.linkGroup}>
             <h5>Product</h5>
-            <a href="#">Features</a>
-            <a href="#">Integrations</a>
-            <a href="#">Pricing</a>
+
+            <Link href="/#features">Features</Link>
+            <Link href="/#integrations">Integrations</Link>
+            <Link href="/#pricing">Pricing</Link>
           </div>
-          <div>
+
+          {/* Company */}
+          <div className={styles.linkGroup}>
             <h5>Company</h5>
-            <a href="#">About</a>
-            <a href="#">Blog</a>
-            <a href="#">Careers</a>
+
+            <Link href="#">About</Link>
+            <Link href="#">Blog</Link>
+            <Link href="#">Careers</Link>
           </div>
-          <div>
+
+          {/* Resources */}
+          <div className={styles.linkGroup}>
             <h5>Resources</h5>
-            <a href="#">API Docs</a>
-            <a href="#">Help Desk</a>
-            <a href="#">Community</a>
+
+            <Link href="#">API Docs</Link>
+            <Link href="#">Help Desk</Link>
+            <Link href="#">Community</Link>
           </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }

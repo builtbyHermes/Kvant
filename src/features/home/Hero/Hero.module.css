@@ -26,7 +26,7 @@
 
   transform: translateX(-50%);
 
-  background-image: url("/images/hero/herobg.png");
+  background-image: url("/herobg.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -373,7 +373,6 @@
 
   width: 1200px;
   height: 25px;
-
   overflow: hidden;
 }
 
