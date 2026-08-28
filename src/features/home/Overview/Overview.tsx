@@ -3,7 +3,7 @@ import styles from "./Overview.module.css";
 
 export default function OverView() {
   return (
-    <section className={styles.integrations}>
+    <section className={styles.integrations} id='features'>
       {/* Section Header */}
       <div className={styles.sectionHeader}>
         <h2>Engineered to scale your operations</h2>

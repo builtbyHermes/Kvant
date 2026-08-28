@@ -1,0 +1,36 @@
+.authPage {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 32px 24px;
+
+  background: #000;
+  color: #f1f0fa;
+}
+
+.brand {
+  align-self: flex-start;
+
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.content {
+  width: 100%;
+  max-width: 420px;
+
+  margin: auto 0;
+}
+
+.footer {
+  margin: 32px 0 0;
+
+  color: #5f5d68;
+
+  font-size: 12px;
+  text-align: center;
+}

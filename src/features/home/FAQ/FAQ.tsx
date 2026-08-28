@@ -21,7 +21,7 @@ const faqItems = [
 
 export default function FAQ() {
   return (
-    <section className={styles.faqSection}>
+    <section className={styles.faqSection} id='faq'>
       <div className={styles.faqContainer}>
         <div className={styles.sectionHeader}>
           <h3>Frequently Asked Questions</h3>

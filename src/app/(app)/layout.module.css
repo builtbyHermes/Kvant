@@ -1,0 +1,17 @@
+.shell {
+  min-height: 100vh;
+
+  display: flex;
+
+  background: #000;
+  color: #f1f0fa;
+}
+
+.main {
+  min-width: 0;
+  flex: 1;
+}
+
+.content {
+  padding: 32px;
+}

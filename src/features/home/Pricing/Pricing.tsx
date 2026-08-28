@@ -2,7 +2,7 @@ import styles from './Pricing.module.css'
 
 export default function Pricing() {
   return (
-    <section className={styles.pricingSection}>
+    <section className={styles.pricingSection} id='pricing'>
       <div className={styles.pricingContainer}>
 
         <div className={styles.headerArea}>

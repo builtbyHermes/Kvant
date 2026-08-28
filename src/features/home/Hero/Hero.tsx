@@ -157,7 +157,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section ref={homePageRef} className={styles.homePage}>
+    <section ref={homePageRef} className={styles.homePage} id='hero'>
       {/* Hero Background */}
       <div className={styles.heroImage} />
 
