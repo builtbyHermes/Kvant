@@ -1,0 +1,53 @@
+.products {
+  padding: 32px;
+}
+
+.pageHeader {
+  margin-bottom: 32px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  font-size: 13px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.pageHeader h2 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.description {
+  margin-top: 8px;
+  color: #888;
+}
+
+.productsCard {
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+}
+
+.tableHeader,
+.tableRow {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1fr 1fr;
+  gap: 20px;
+  padding: 18px 20px;
+}
+
+.tableHeader {
+  background: rgba(255, 255, 255, 0.04);
+  color: #999;
+  font-size: 13px;
+}
+
+.tableRow {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.tableRow span {
+  color: #eee;
+}

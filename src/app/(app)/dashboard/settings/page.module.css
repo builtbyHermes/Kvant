@@ -1,0 +1,102 @@
+.settings {
+  padding: 32px;
+}
+
+.pageHeader {
+  margin-bottom: 32px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #888;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.pageHeader h2 {
+  margin: 0;
+  font-size: 32px;
+  letter-spacing: -0.03em;
+}
+
+.description {
+  margin: 8px 0 0;
+  color: #888;
+}
+
+.settingsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+}
+
+.card {
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.card:last-child {
+  grid-column: span 2;
+}
+
+.cardHeader {
+  margin-bottom: 20px;
+}
+
+.cardHeader h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+}
+
+.cardHeader p {
+  margin: 0;
+  color: #777;
+  font-size: 14px;
+}
+
+.setting {
+  padding: 16px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.setting div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.label {
+  color: #888;
+  font-size: 14px;
+}
+
+.setting strong {
+  color: #f1f0fa;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+@media (max-width: 700px) {
+  .settings {
+    padding: 20px;
+  }
+
+  .settingsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .card:last-child {
+    grid-column: auto;
+  }
+
+  .setting div {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+}

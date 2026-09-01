@@ -8,15 +8,15 @@ const navigation = [
   },
   {
     label: "Customers",
-    href: "/customers",
+    href: "/dashboard/customers",
   },
   {
     label: "Products",
-    href: "/products",
+    href: "/dashboard/products",
   },
   {
     label: "Settings",
-    href: "/settings",
+    href: "/dashboard/settings",
   },
 ];
 

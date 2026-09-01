@@ -1,0 +1,88 @@
+.customers {
+  padding: 32px;
+}
+
+.pageHeader {
+  margin-bottom: 32px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #888;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.pageHeader h2 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.description {
+  margin-top: 8px;
+  color: #888;
+}
+
+.customersCard {
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+}
+
+.tableHeader,
+.tableRow {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1fr 1fr;
+  gap: 20px;
+  padding: 18px 20px;
+  align-items: center;
+}
+
+.tableHeader {
+  background: rgba(255, 255, 255, 0.04);
+  color: #999;
+  font-size: 13px;
+}
+
+.tableRow {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.customer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.customer strong {
+  color: #f1f0fa;
+}
+
+.customer span {
+  color: #777;
+  font-size: 13px;
+}
+
+.active {
+  color: #8ee6a8;
+}
+
+.inactive {
+  color: #888;
+}
+
+@media (max-width: 800px) {
+  .customers {
+    padding: 20px;
+  }
+
+  .customersCard {
+    overflow-x: auto;
+  }
+
+  .tableHeader,
+  .tableRow {
+    min-width: 700px;
+  }
+}

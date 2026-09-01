@@ -1,62 +1,16 @@
 import styles from "./page.module.css";
+import { getDashboardData } from "@/data/dashboard";
 
-const stats = [
-  {
-    label: "Total Revenue",
-    value: "$84,240",
-    change: "+12.5%",
-  },
-  {
-    label: "Orders",
-    value: "1,284",
-    change: "+8.2%",
-  },
-  {
-    label: "Customers",
-    value: "3,842",
-    change: "+14.6%",
-  },
-  {
-    label: "Conversion Rate",
-    value: "6.8%",
-    change: "+2.4%",
-  },
-];
+export default  async function DashboardPage() {
 
-const orders = [
-  {
-    id: "#KV-1024",
-    customer: "Alex Morgan",
-    product: "Analytics Pro",
-    amount: "$249.00",
-    status: "Completed",
-  },
-  {
-    id: "#KV-1023",
-    customer: "Sarah Wilson",
-    product: "Business Plan",
-    amount: "$149.00",
-    status: "Completed",
-  },
-  {
-    id: "#KV-1022",
-    customer: "Daniel Smith",
-    product: "Analytics Pro",
-    amount: "$249.00",
-    status: "Pending",
-  },
-  {
-    id: "#KV-1021",
-    customer: "Emma Davis",
-    product: "Starter Plan",
-    amount: "$79.00",
-    status: "Completed",
-  },
-];
+  const response = await fetch("http://localhost:3000/api/dashboard");
 
-const chartData = [42, 58, 48, 72, 64, 82, 76, 91, 84, 96, 88, 100];
+  if (!response.ok) {
+    throw new Error("Failed to fetch dashboard data");
+  }
 
-export default function DashboardPage() {
+  const dashboardData = await response.json();
+
   return (
     <div className={styles.dashboard}>
       <div className={styles.pageHeader}>
@@ -74,7 +28,7 @@ export default function DashboardPage() {
       </div>
 
       <section className={styles.statsGrid}>
-        {stats.map((stat) => (
+        {dashboardData.stats.map((stat) => (
           <article key={stat.label} className={styles.statCard}>
             <p>{stat.label}</p>
 
@@ -98,7 +52,7 @@ export default function DashboardPage() {
         </div>
 
         <div className={styles.chart}>
-          {chartData.map((height, index) => (
+          {dashboardData.chart.data.map((height, index) => (
             <div
               key={index}
               className={styles.bar}
@@ -136,7 +90,7 @@ export default function DashboardPage() {
             <span>Status</span>
           </div>
 
-          {orders.map((order) => (
+          {dashboardData.orders.map((order) => (
             <div key={order.id} className={styles.tableRow}>
               <span>{order.id}</span>
               <span>{order.customer}</span>
