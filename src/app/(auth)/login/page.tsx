@@ -13,24 +13,42 @@ export default function LoginPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
+  async function handleSubmit(
+  event: React.FormEvent<HTMLFormElement>
+) {
+  event.preventDefault();
+  setError("");
 
-    setError("");
-
-    if (!email || !password) {
-      setError("Please enter your email and password.");
-      return;
-    }
-    
-    console.log(`${password}   and  ${email}`)
-    setIsLoading(true);
-
-    setTimeout(() => {
-      setIsLoading(false);
-      router.push("/dashboard");
-    }, 1000);
+  if (!email || !password) {
+    setError("Please enter your email and password.");
+    return;
   }
+
+  setIsLoading(true);
+
+      try {
+        const response = await fetch("/api/auth/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, password }),
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          setError(data.message || "Unable to sign in.");
+          return;
+        }
+
+        router.push("/dashboard");
+      } catch {
+        setError("Something went wrong. Please try again.");
+      } finally {
+        setIsLoading(false);
+      }
+    }
 
   return (
     <section className={styles.login}>

@@ -15,34 +15,54 @@ export default function RegisterPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
-  function handleSubmit(event: SubmitEvent) {
-    event.preventDefault();
+    async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+        event.preventDefault();
+        setError("");
 
-    setError("");
+        if (!name || !email || !password || !confirmPassword) {
+          setError("Please fill in all fields.");
+          return;
+        }
 
-    if (!name || !email || !password || !confirmPassword) {
-      setError("Please fill in all fields.");
-      return;
-    }
+        if (password.length < 8) {
+          setError("Password must be at least 8 characters.");
+          return;
+        }
 
-    if (password.length < 8) {
-      setError("Password must be at least 8 characters.");
-      return;
-    }
+        if (password !== confirmPassword) {
+          setError("Passwords do not match.");
+          return;
+        }
 
-    if (password !== confirmPassword) {
-      setError("Passwords do not match.");
-      return;
-    }
+        setIsLoading(true);
 
-    setIsLoading(true);
+        try {
+          const response = await fetch("/api/auth/register", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              name,
+              email,
+              password,
+            }),
+          });
 
-    // Temporary frontend-only registration simulation.
-    setTimeout(() => {
-      setIsLoading(false);
-      router.push("/dashboard");
-    }, 1000);
-  }
+          const data = await response.json();
+
+          if (!response.ok) {
+            setError(data.message || "Registration failed.");
+            return;
+          }
+
+          router.push("/login");
+        } catch {
+          setError("Unable to connect to the server. Please try again.");
+        } finally {
+          setIsLoading(false);
+        }
+      }
 
   return (
     <section className={styles.register}>

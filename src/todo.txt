@@ -1,0 +1,17 @@
+[0]1: there are duplicate imports like,inside the register,login,logout.
+    that should be happening in one place
+
+[0]2:inside the resgister route,do the ff :
+    [1]Validate the types of name, email, and password received from the client.
+    [0] Validate the required fields and reject empty or invalid values.
+    [0] Validate the email format.
+    [0] Enforce password requirements (minimum length and complexity).
+    [0] Check whether the email already exists in PostgreSQL using Prisma.
+    [0] Return 409 Conflict if the email is already registered.
+    [0] Hash the password using bcrypt or Argon2 before storing it.
+    [0] Create the user record in PostgreSQL using Prisma.
+    [0] Return 201 Created with a success message and safe user information.
+    [0] Never return the password or password hash in the response.
+    [0] Handle unexpected errors and return an appropriate 500 Internal Server Error.
+    Optional: Automatically create a session and log the user in after successful registration. 
+    Otherwise, redirect them to the login page.
