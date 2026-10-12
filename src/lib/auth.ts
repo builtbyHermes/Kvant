@@ -1,3 +1,10 @@
+/**
+ * This function will => get the cookie from https req
+ *  will query the db for user id of that hashed session token to return user
+ * 
+ * will throw error on => session token not present,expired token or no session in db 
+ */
+
 import { cookies } from "next/headers";
 import { createHash } from "node:crypto";
 import { prisma } from "@/lib/prisma";

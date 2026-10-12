@@ -2,14 +2,15 @@ import styles from "./page.module.css";
 import { getDashboardData } from "@/data/dashboard";
 
 export default  async function DashboardPage() {
+  
+  
+  // const response = await fetch("http://localhost:3000/api/dashboard");
 
-  const response = await fetch("http://localhost:3000/api/dashboard");
+  // if (!response.ok) {
+  //   throw new Error("Failed to fetch dashboard data");
+  // }
 
-  if (!response.ok) {
-    throw new Error("Failed to fetch dashboard data");
-  }
-
-  const dashboardData = await response.json();
+  const dashboardData = await getDashboardData();
 
   return (
     <div className={styles.dashboard}>
@@ -28,7 +29,7 @@ export default  async function DashboardPage() {
       </div>
 
       <section className={styles.statsGrid}>
-        {dashboardData.stats.map((stat) => (
+        {dashboardData.stats.map((stat:any) => (
           <article key={stat.label} className={styles.statCard}>
             <p>{stat.label}</p>
 
@@ -52,7 +53,7 @@ export default  async function DashboardPage() {
         </div>
 
         <div className={styles.chart}>
-          {dashboardData.chart.data.map((height, index) => (
+          {dashboardData.chart.data.map((height:any, index:any) => (
             <div
               key={index}
               className={styles.bar}
@@ -90,7 +91,7 @@ export default  async function DashboardPage() {
             <span>Status</span>
           </div>
 
-          {dashboardData.orders.map((order) => (
+          {dashboardData.orders.map((order:any) => (
             <div key={order.id} className={styles.tableRow}>
               <span>{order.id}</span>
               <span>{order.customer}</span>

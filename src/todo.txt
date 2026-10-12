@@ -15,3 +15,6 @@
     [0] Handle unexpected errors and return an appropriate 500 Internal Server Error.
     Optional: Automatically create a session and log the user in after successful registration. 
     Otherwise, redirect them to the login page.
+
+[0]  The helper function getCurrentUser() is used in each page,while all
+     the we want is to check if there is a valid session 
